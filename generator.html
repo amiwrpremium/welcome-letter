@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <script>
+    function getHTML() {
+      return `
+      <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+
+    <style>
+      @font-face {
+        font-family: 'Yekan';
+        font-weight: normal;
+        src: url('https://db.onlinewebfonts.com/t/3900805327d60d85482057d643f2a5f0.ttf');
+      }
+
+      @font-face {
+        font-family: 'Yekan';
+        font-weight: bold;
+        src: url("https://db.onlinewebfonts.com/t/41e49eab42867016423011dccc96c22a.ttf");
+      }
+
+      @font-face {
+        font-family: 'Yekan';
+        font-weight: 800;
+        src: url('https://db.onlinewebfonts.com/t/e1d06869ee86ac98052a5a1788122235.ttf');
+      }
+
+      :root {
+        --okala-red: #DF2531;
+        --okala-cyan: #02ADAC;
+      }
+
+      body {
+        font-family: 'Yekan', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
+        font-weight: normal;
+        font-size: 1rem;
+        text-align: justify;
+        direction: rtl;
+        border: 3px solid #DF2531;
+        margin: 1rem;
+        border-radius: 1.5rem;
+      }
+
+      .wrapper {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        max-width: 90%;
+        margin-inline: 20%;
+        margin: auto auto;
+      }
+
+      .side-by-side-td {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .big-center-image {
+        margin: 2.5rem auto;
+        display: inline;
+        max-width: 50%;
+      }
+
+      a img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .input {
+        font-weight: bold;
+        padding: 10rem 0;
+        color: #DF2531;
+      }
+
+      .nice-button {
+        display: block;
+        margin: 0 auto;
+        background-color: #DF2531;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      @media screen and (min-width: 1200px) {
+        body {
+          font-size: 2rem;
+        }
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <table class="wrapper">
+      <tr>
+        <td>
+          <p>
+            <span class="input">{{ NAME }}</span> عزیز
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            اُکالایی شدنت رو در تاریخ <span class="input">{{ DATE }}</span> تبریک می‌گیم و از اینکه عضوی از اُکالا هستی
+            افتخار می‌کنیم.
+            <br>
+            در اولین روز ورودت <span class="input">{{ HR_GEN }}</span> به عنوان HR Generalist و <span class="input">{{ OK_BUD }}</span>
+            به عنوان OkalaBuddy و <span class="input">{{ MANAGER }}</span> به عنوان مدیر مستقیم راهنما های تو هستند تا
+            در
+            این مسیر همراهیت کنند.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="color: #02ADAC">
+            مواردی که بهتره تو‌ روز اول ورودت بدونی:
+          </p>
+          &bull; پسوورد وای‌فای شرکت: <span class="input"> {{ WIFI }}</span><br>
+          &bull; کد پرسنلی: <span class="input"> {{ EMPLOYEE }}</span><br>
+          &bull; ایمیل سازمانی: <span class="input"> {{ COMPANY }}</span><br>
+          &bull; پسورد سیستم: <span class="input"> {{ SYSTEM }}</span>
+          <small>( لطفا حتما بعد از وارد شد به سیستمتون رمزش رو عوض کنید.)</small>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <br>
+          <button class="nice-button">
+            <a href="https://okala.ir/contact-us" target="_blank" style="color: white; text-decoration: none;">Information</a>
+          </button>
+          <br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="side-by-side-td">
+          <img
+              src="https://s2.uupload.ir/files/vector_smart_object3_30uf.png"
+              alt="factory"
+              class="big-center-image"
+          />
+          <img
+              src="https://s2.uupload.ir/files/vector_smart_object2_g3v5.png"
+              alt="bus"
+              class="big-center-image"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+`
+    }
+
+    function nicePrompt(message) {
+      let result = prompt(message);
+      if (result === null || result === "") {
+        nicePrompt(message);
+      } else {
+        return result;
+      }
+    }
+
+    function generate() {
+      let name = nicePrompt("نام و نام خانوادگی");
+      let date = nicePrompt("تاریخ اُکالایی شدن");
+      let hrGen = nicePrompt("HR Generalist");
+      let okBud = nicePrompt("OkalaBuddy");
+      let manager = nicePrompt("مدیر مستقیم راهنما");
+      let wifi = nicePrompt("پسوورد وای‌فای شرکت");
+      let employee = nicePrompt("کد پرسنلی");
+      let company = nicePrompt("ایمیل سازمانی");
+      let system = nicePrompt("پسورد سیستم");
+
+      let html = getHTML();
+      html = html.replaceAll("{{ NAME }}", name);
+      html = html.replaceAll("{{ DATE }}", date);
+      html = html.replaceAll("{{ HR_GEN }}", hrGen);
+      html = html.replaceAll("{{ OK_BUD }}", okBud);
+      html = html.replaceAll("{{ MANAGER }}", manager);
+      html = html.replaceAll("{{ WIFI }}", wifi);
+      html = html.replaceAll("{{ EMPLOYEE }}", employee);
+      html = html.replaceAll("{{ COMPANY }}", company);
+      html = html.replaceAll("{{ SYSTEM }}", system);
+
+      return html;
+    }
+
+    function download(html) {
+      let a = document.createElement('a');
+      a.href = "data:application/octet-stream," + encodeURIComponent(html);
+      a.download = "nice.html";
+      a.click();
+    }
+
+    function openInNewTab(html) {
+      let win = window.open();
+      win.document.write(html);
+    }
+
+    function main() {
+      let html = generate();
+      openInNewTab(html);
+      download(html);
+    }
+
+    main()
+
+  </script>
+</html>
