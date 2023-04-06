@@ -3,7 +3,7 @@
   <script>
     function getHTML() {
       return `
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8">
@@ -40,11 +40,13 @@
         font-family: 'Yekan', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
         font-weight: normal;
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-align: justify;
         direction: rtl;
+        max-width: 80%;
         border: 3px solid #DF2531;
-        margin: 1rem;
+        /*margin: 1rem;*/
+        margin: auto auto;
         border-radius: 1.5rem;
       }
 
@@ -68,20 +70,15 @@
         max-width: 50%;
       }
 
-      a img {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-
       a {
         color: #02ADAC;
       }
 
       .input {
         font-weight: bold;
-        padding: 10rem 0;
+        padding: 0 0.3rem;
         color: #DF2531;
+        max-height: 100%;
       }
 
       .nice-button {
@@ -97,13 +94,15 @@
       }
 
       .header-logo {
-        height: 120px;
-        width: 120px
+        height: 5%;
+        width: 5%;
+        margin-top: auto;
+        margin-bottom: auto;
       }
 
       @media screen and (min-width: 1200px) {
         body {
-          font-size: 2rem;
+          font-size: 1rem;
         }
 
       }
@@ -125,9 +124,11 @@
             از اینکه در تاریخ <span class="input">{{ DATE }}</span> همراه اُکالا شدی افتخار می‌کنیم و امیدواریم شروع
             خوبی رو در اُکالا و تیمت داشته باشی.
             <br>
-            <span class="input">{{ HR_GEN }}</span> به عنوان HR Generalist و <span class="input">{{ OK_BUD }}</span> به
-            عنوان OkalaBuddy و
-            <span class="input">{{ MANAGER }}</span> به عنوان مدیر مستقیمت راهنما های شما هستند تا در این مسیر همراهیت
+            <span class="input">{{ HR_GEN }}</span> به عنوان <span class="input">HR Generalist</span> و <span
+              class="input">{{ OK_BUD }}</span> به
+            عنوان <span class="input">OkalaBuddy</span> و
+            <span class="input">{{ MANAGER }}</span> به عنوان <span class="input">مدیر مستقیمت</span> راهنما های شما
+            هستند تا در این مسیر همراهیت
             کنند.
           </p>
         </td>
@@ -144,19 +145,36 @@
           <h3 style="color: #02ADAC">
             خوبه که بدونی:
           </h3>
-          &bull; نام وای‌فای شرکت: <span class="input"> {{ WIFI_NAME }}</span><br>
-          &bull; پسوورد وای‌فای: <span class="input"> {{ WIFI_PASS }}</span><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="display: flex">
+          <img class="header-logo"
+               src="wifi.png"
+               alt="wifi"
+          >
+          <p style="margin-right: 1rem; margin-bottom: auto; margin-top: auto">
+            نام WiFi اکالا <span class="input">UNIFI</span> و رمزش <span class="input">!Unifi^&2022</span> هست.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
           &bull; شماره همکاری: <span class="input"> {{ EMPLOYEE }}</span><br>
           &bull; ایمیل سازمانی: <span class="input"> {{ EMAIL }}</span><br>
           &bull; رمز ایمیل سازمانی و سیستم: <span class="input"> {{ PASSWORD }}</span>
           <small>( لطفا حتما بعد از وارد شد به سیستمتون رمزش رو عوض کنید.)</small><br>
-          &bull; <a href="{{ KASRA }}">لینک کسرا</a><br>
-          <!--&bull; لینک کسرا: <span class="input"> {{ KASRA }}</span><br>-->
-          &bull; <a href="{{ SKYPE }}">لینک اسکایپ بیزنس</a><br>
-          <!--&bull; لینک اسکایپ بیزنس: <span class="input"> {{ SKYPE }}</span><br>-->
-          &bull; <a href="{{ DISCORD }}">لینک عضویت در دیسکورد</a>
-          <!--&bull; لینک عضویت در دیسکورد: <span class="input"> {{ DISCORD }}</span>-->
-          <small>(لطفا بعد از اینکه عضو دیسکورد شدی، داخل گروه - everyone chat - یه سلامی بده :))</small>
+          &bull; لینک کسرا: <a href="https://attendance.gig.services">https://attendance.gig.services</a><br>
+          &bull; لینک اسکایپ بیزنس: <a href=" {{ SKYPE }}"> {{ SKYPE }}</a><br>
+          &bull; لینک عضویت در دیسکورد: <a href="https://discord.gg/MgsxuFTR">https://discord.gg/MgsxuFTR</a>
+          <small>(لطفا بعد از اینکه عضو دیسکورد شدی، داخل گروه - <span class="input">everyone chat</span> - یه سلامی بده
+                 :))</small>
         </td>
       </tr>
       <tr>
@@ -170,8 +188,9 @@
         <td style="display: flex">
           <img class="header-logo"
                src="https://www.kasraco.net/wp-content/uploads/2022/06/Cover-home-page.jpg"
-               alt="kasra">
-          <h3 style="margin-right: 1rem">
+               alt="kasra"
+          >
+          <h3 style="margin-right: 1rem; margin-bottom: auto; margin-top: auto">
             کسرا:
           </h3>
         </td>
@@ -189,7 +208,7 @@
       <tr>
         <td style="display: flex;">
           <img class="header-logo" src="food.png" alt="meal">
-          <h3 style="margin-right: 1rem">
+          <h3 style="margin-right: 1rem; margin-bottom: auto; margin-top: auto">
             سامانه ثبت ناهار:
           </h3>
         </td>
@@ -199,7 +218,7 @@
           <p>
             تیم منابع انسانی هر ماه برای یادآوری ثبت غذا به اُکالایی ها ایمیل میزنه و شما می‌تونی از طریق سایت، غذای یک
             ماهت رو سفارش بدی.<br>
-            <span style="color: #02ADAC">مهدی از تیم پشتیبانی منابع انسانی</span> که در طبقه دوم ساکن هست در این مورد
+            <span class="input">مهدی از تیم پشتیبانی منابع انسانی</span> که در طبقه دوم ساکن هست در این مورد
             می‌تونه کمکت کنه.
           </p>
         </td>
@@ -207,10 +226,10 @@
       <tr>
         <td style="display: flex;">
           <img class="header-logo"
-               style="width: 90px;"
-               src="data:image/png;base64,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"
-               alt="meal">
-          <h3 style="margin-right: 1rem">
+               src="https://app.buynowstores.com/statics/icons/favicon.ico"
+               alt="meal"
+          >
+          <h3 style="margin-right: 1rem; margin-bottom: auto; margin-top: auto">
             باینو:
           </h3>
         </td>
@@ -221,10 +240,21 @@
             در اولین روز ورودت باینو شما فعال شده و می‌تونی وارد سایتش بشی و با اسکن کردن QRCODE ای که روی یخچال های
             باینو که در پارکینگ همکف هست خرید کنی.<br>
             هرماه مبلغ 100 هزار تومان حساب باینو شما شارژ میشه.<br>
-            <span style="color: #02ADAC">مهدی از تیم پشتیبانی منابع انسانی</span> که در طبقه دوم ساکن هست در این مورد
+            <span class="input">مهدی از تیم پشتیبانی منابع انسانی</span> که در طبقه دوم ساکن هست در این مورد
             می‌تونه کمکت کنه.
-
           </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          برای دسترسی به اطلاعات راه های ارتباطی اُکالایی ها، می‌تونی دکمه زیر رو کلیک کنی.
         </td>
       </tr>
       <tr>
@@ -234,10 +264,26 @@
           <button class="nice-button">
             <a href="https://docs.google.com/spreadsheets/d/1zWAmtSQIh8Kgg9fJheY-ZD6pXSkGuoYdN4OcaYQcfgA/edit#gid=0"
                target="_blank"
-               style="color: white; text-decoration: none;">Information</a>
+               style="color: white; text-decoration: none;">اطلاعات اولیه اکالایی ها
+            </a>
           </button>
           <br>
           <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold">
+          <h3 style="color: #DF2531">
+            ما در اکالا یک خوانواده ایم پس اگه برات هر سوال دیگه ای پیش اومد و خیلی خوشحال میشیم بتونیم همراهیت کنیم.
+            <br>
+            سفر خوبی داشته باشی :)
+          </h3>
         </td>
       </tr>
       <tr>
@@ -279,8 +325,8 @@
       let hrGen = nicePrompt("HR Generalist");
       let okBud = nicePrompt("OkalaBuddy");
       let manager = nicePrompt("مدیر مستقیم راهنما");
-      let wifi_name = nicePrompt("نام وایفای");
-      let wifi_pass = nicePrompt("رمز وایفای");
+      // let wifi_name = nicePrompt("نام وایفای");
+      // let wifi_pass = nicePrompt("رمز وایفای");
       let employee = nicePrompt("کد کارمندی");
       let kasra = nicePrompt("کد کسرا");
       let email = nicePrompt("ایمیل");
@@ -295,8 +341,8 @@
       html = html.replaceAll("{{ HR_GEN }}", hrGen);
       html = html.replaceAll("{{ OK_BUD }}", okBud);
       html = html.replaceAll("{{ MANAGER }}", manager);
-      html = html.replaceAll("{{ WIFI_NAME }}", wifi_name);
-      html = html.replaceAll("{{ WIFI_PASS }}", wifi_pass);
+      // html = html.replaceAll("{{ WIFI_NAME }}", wifi_name);
+      // html = html.replaceAll("{{ WIFI_PASS }}", wifi_pass);
       html = html.replaceAll("{{ EMPLOYEE }}", employee);
       html = html.replaceAll("{{ KASRA }}", kasra);
       html = html.replaceAll("{{ EMAIL }}", email);
